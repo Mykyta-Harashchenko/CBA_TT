@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50),
+    email VARCHAR(150) NOT NULL UNIQUE,
+    hashed_password VARCHAR(255),
+    refresh_token VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS authors (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS books (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    published_year INTEGER NOT NULL,
+    genre VARCHAR(50),
+    author_id INTEGER NOT NULL REFERENCES authors(id) ON DELETE CASCADE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

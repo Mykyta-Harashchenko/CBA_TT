@@ -1,0 +1,5 @@
+[
+    {"title": "The Hobbit", "author": "J.R.R. Tolkien", "published_year": 1937, "genre": "History"},
+    {"title": "Dune", "author": "Frank Herbert", "published_year": 1965, "genre": "Fiction"},
+    {"title": "Invalid Book", "author": "Unknown", "published_year": "Year2020", "genre": "Fiction"}
+]
